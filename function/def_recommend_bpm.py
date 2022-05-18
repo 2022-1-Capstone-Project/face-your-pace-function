@@ -1,5 +1,5 @@
 import math
-from re import A
+
 def rec_bpm(age, height, workout_level, target_pace, stride):
     age = int(age)
     height = int(height)
