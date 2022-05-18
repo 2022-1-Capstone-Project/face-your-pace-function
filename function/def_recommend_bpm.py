@@ -43,7 +43,7 @@ def rec_bpm(age, height, workout_level, target_pace, stride):
         # print(stride) # 평균 보폭
 
 
-    elif target_pace != 0 and stride == 0: # 타겟 페이스모름 보폭을 알 때 --> workout level로 파악
+    elif target_pace == 0 and stride != 0: # 타겟 페이스모름 보폭을 알 때 --> workout level로 파악
         if workout_level   == '1' : target_pace = 900  # 4km/h
         elif workout_level == '2' : target_pace = 600  # 6km/h
         elif workout_level == '3' : target_pace = 450  # 8km/h
