@@ -35,7 +35,7 @@ def enable_download(driver):
     
 driver = webdriver.Chrome('chromedriver.exe')  
 options = webdriver.ChromeOptions()
-def download_music(link, download_path):
+def download_music_mp3(link, download_path):
     global options
     global driver
     # options = webdriver.ChromeOptions()
