@@ -54,4 +54,5 @@ https://blog.naver.com/lynn1128/222310925258
 # 3. 사운드클라우드 링크, 다운받을 경로 입력 
 face-your-pace-function/download/test.py 의 6번째와 7번째 line을 수정하면 된다. </br>
 mp3 로 다운받고 싶다면 6번째 line만 실행, wav로 다운받고 싶다면 7번째 line만 실행
-![image](https://user-images.githubusercontent.com/76734572/170465435-6fd54e5e-51c3-4e0a-a086-c143f5058c21.png)
+![image](https://user-images.githubusercontent.com/76734572/170473003-5385fd80-9917-4db1-a346-e649f8126c8a.png)
+
