@@ -1,12 +1,14 @@
-# 1. 셀레니움 라이브러리 설치 
+# 1. selenium, pyperclip 라이브러리 설치 
 명령 프롬포트에 다음과 같은 명령어 입력
 ## windows
 ```
 pip install selenium
+pip install pyperclip
 ```
 ## mac
 ```
 pip3 install selenium
+pip3 install pyperclip
 ```
 
 # 2. 크롬 드라이버 설치
