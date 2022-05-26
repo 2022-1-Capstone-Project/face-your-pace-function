@@ -14,7 +14,8 @@ def copy_input(xpath, input, driver):
     pyperclip.copy(input)
     #driver.find_element_by_xpath(xpath).click()
     driver.find_element(By.XPATH, value = xpath).click()
-    ActionChains(driver).key_down(Keys.CONTROL).send_keys('v').key_up(Keys.CONTROL).perform()
+    ActionChains(driver).key_down(Keys.CONTROL).send_keys('v').key_up(Keys.CONTROL).perform() # WINDOWS
+    # ActionChains(driver).key_down(Keys.COMMAND).send_keys('v').key_up(Keys.COMMAND).perform() # MAC
 
 
 def download_music_wav(link, download_path):
