@@ -56,20 +56,22 @@ if __name__ == '__main__':
   # wf.close()
 
 
-  #pydub
+  #pydub - chickbumps
   # song = AudioSegment.from_wav("dakara.wav") 
   # #song = AudioSegment.from_mp3("dakara.mp3") #mp3 - ffmpeg 에서 무슨 오류
   # slow_sound = speed_change(song, 0.75)
   # fast_sound = speed_change(song, 2.0)
   # play(slow_sound)
 
-  sound = AudioSegment.from_wav("dakara.wav")
+  
+
+  sound = AudioSegment.from_wav("./testmusic/dakara.wav")
   #sound = AudioSegment.from_mp3(sys.argv[1])
   #sound.export("file.wav", format="wav")
 
   #print(sys.argv[1])
 
-  y, sr = sf.read("dakara.wav")
+  y, sr = sf.read("./testmusic/dakara.wav")
   # Play back at extra low speed
   y_stretch = pyrb.time_stretch(y, sr, 0.5)
   # Play back extra low tones
