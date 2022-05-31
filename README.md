@@ -6,7 +6,8 @@ python fyp_download.py https://soundcloud.com/ferret-lie/only-your-stars-trickst
 ```
 python fyp_download.py 링크 저장할주소 형식으로 입력하면 된다.</br>
 ![image](https://user-images.githubusercontent.com/76734572/170978074-0c7d9d0e-dbe0-4df1-8053-921e0b38c04a.png)</br>
-링크과 저장할 주소에 띄어쓰기가 있다면 따옴표('') 로 묶어야 한다. 그렇지 않으면 서로 다른 argv 로 인식한다.</br>
+~~링크과 저장할 주소에 띄어쓰기가 있다면 따옴표('') 로 묶어야 한다. 그렇지 않으면 서로 다른 argv 로 인식한다.</br>~~
+**무조건 '' 로 묶을 것! 사클 링크에 % $ # 등 특수기호가 있음. 이걸 ''로 묶지 않으면 인식을 못한다** </br>
 약 2분 정도 소요된다</br>
 
 ## 역할
