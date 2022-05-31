@@ -73,6 +73,16 @@ def download_mp3(link, download_path):
     driver.find_element(By.XPATH, value = click_xpath).send_keys(Keys.ENTER) # 직접 버튼을 누르는 것
     time.sleep(30)
     driver.close()
+
+    '''
+    bpm 까지 추출하도록 하면 여기서 진행되어야 함. 
+    y, sr = librosa.load(ownload_path, sr= 96000) # 다운로드 한 위치로
+    tempo, beat_frames = librosa.beat.beat_track(y=y,sr=sr)
+    str(tempo)
+    '''
+
+
+
     # 노래 제목, 재생 길이, 커버사진을 $ 를 구분자로 return
     return (title[6:]+'$'+length[7:-8]+'$'+image_xpath)
     
