@@ -4,7 +4,7 @@
 ```
 python fyp_download.py 'https://soundcloud.com/ferret-lie/only-your-stars-trickstar-ver' 'C:\Users\yoondain\Desktop\capstone'
 ```
-python fyp_download.py 링크 저장할주소 형식으로 입력하면 된다.</br>
+**python fyp_download.py 링크 저장할주소** 형식으로 입력하면 된다.</br>
 ![image](https://user-images.githubusercontent.com/76734572/171096196-113e1b27-ec9a-4f94-a1d8-2112320b6fb1.png)
 </br>
 ~~링크과 저장할 주소에 띄어쓰기가 있다면 따옴표('') 로 묶어야 한다. 그렇지 않으면 서로 다른 argv 로 인식한다.</br>~~
@@ -32,17 +32,29 @@ fyp_download.py 에서 chromedriver 옵션을 설정하는 부분이다.
 ```
 python fyp_musicmodify.py 'The Tempest Night-full-.mp3'  'test5.wav' '00:20' '01:00' '100'    
 ```
-python fyp_musicmodify.py mp3주소 저장할wav주소 시작시간 끝시간 원하는템포 형식으로 입력하면 된다 </br>
+**python fyp_musicmodify.py mp3주소 저장할wav주소 시작시간 끝시간 원하는템포** 형식으로 입력하면 된다 </br>
 ![image](https://user-images.githubusercontent.com/76734572/171096112-3e08b093-b0eb-4e2c-9f9a-853eac211fe3.png)</br>
 sr ( sampling rate ) 에 따라 소요 시간이 다름. sr에 따라 tempo의 값이 조금씩 다름. sr = 96000 (96kHz) 일 때가 가장 이상적 </br>
 최소 40초부터 최대 90초 소요</br>
 ## 역할
 시작시간, 끝시간, 원하는 템포를 입력받아 그 wav파일을 만들어 저장한다.
 
+----
+# 3. fyp_bpmrecommend.py
+```
+python fyp_bpmrecommend.py '23' '165' '4' '7:30' '100'    
+```
+**python fyp_bpmrecommend.py 나이 키 운동강도 타켓페이스 보폭** 형식으로 입력하면 된다</br>
 
+![image](https://user-images.githubusercontent.com/76734572/171343940-a172ebed-e965-4771-96f5-27e9ef64265a.png)</br>
+## 역할
+1. 사용자의 정보에 맞게 bpm 을 제공한다. 입력한 정보에 맞는 bpm 범위를 return</br>
+![image](https://user-images.githubusercontent.com/76734572/171344389-cdec34c3-5b67-4dc1-8264-890a136828ff.png)</br>
+2. 추천</br>
+![image](https://user-images.githubusercontent.com/76734572/171344824-1c52c0bb-03fc-4b37-83df-76c9f219fda4.png)</br>
 
-
-
+- 페이스 모를 때는 target_pace 를 0으로 입력 -> 운동강도와 나이에 따라 target_pace 제공
+- 보폭 모를 때는 stride 를 0으로 입력 -> 키에 따라 stirde 제공
 
 
 
