@@ -1,6 +1,5 @@
 import sys
 
-
 def to_sec(t):
     min, sec = t.rstrip().split(sep=":")
     return 60 * int(min) + int(sec)
@@ -313,17 +312,20 @@ def rec_bpm(sex, age, height, weight,  workout_level, target_pace, stride):
     workout_level=workout_level
     if target_pace == '0' : target_pace = 0
     else: target_pace = to_sec(target_pace) # 이것도 '00:00' 꼴로 입력 
+    print(target_pace)
     stride = int(stride)
 
-
-
     if target_pace != 0 and stride == 0: # 타겟 페이스는 있는데 보폭을 모를 때
+        print('stride = 0')
         stride = getStride(height)
+        print(stride)
 
     elif target_pace == 0 and stride != 0: # 타겟 페이스모름 보폭을 알 때
+        print('target pace = 0')
         target_pace = getTargetPace(sex,age,workout_level,weight)
 
     elif target_pace == 0 and stride == 0: # 둘 다 모를 때
+        print('both 0')
         stride = getStride(height)
         target_pace = getTargetPace(sex,age,workout_level,weight)
 
@@ -332,7 +334,6 @@ def rec_bpm(sex, age, height, weight,  workout_level, target_pace, stride):
 
     # kilo_per_hour = 3600/target_pace   # km/h
     footnum = int(100000/stride)+1 # 보폭으로 뛰었을 때 몇번 발걸음을 해야하는지
-
 
     recommend_bpm = footnum/(target_pace/60)
     bpm = int(recommend_bpm)
@@ -344,19 +345,18 @@ def rec_bpm(sex, age, height, weight,  workout_level, target_pace, stride):
 
 
 if __name__ == '__main__':
+    if len(sys.argv) != 1:
+        sex = sys.argv[1] # 성별, 'f' of 'm', type: str
+        age = sys.argv[2] # 나이 , type:str
+        height = sys.argv[3] # 키 , type:str
+        weight = sys.argv[4] # '00', type:str
 
-    sex = sys.argv[1] # 성별, 'f' of 'm', type: str
-    age = sys.argv[2] # 나이 , type:str
-    height = sys.argv[3] # 키 , type:str
-    weight = sys.argv[4] # '00', type:str
-
-    workout_level = sys.argv[5] # 운동 강도 1~6 숫자가 클수록 고강도 , type:str
-    target_pace = sys.argv[6] # "00:00" 형태. 타켓 페이스 , type:str
-    stride = sys.argv[7] # 보폭  , type:str
-    # workout_duration = sys.argv[8]
+        workout_level = sys.argv[5] # 운동 강도 1~6 숫자가 클수록 고강도 , type:str
+        target_pace = sys.argv[6] # "00:00" 형태. 타켓 페이스 , type:str
+        stride = sys.argv[7] # 보폭  , type:str
+        # workout_duration = sys.argv[8]
     
-    rec_bpm(sex, age, height, weight, workout_level, target_pace,stride)
-    
-    # print(to_sec('00:00'))
+        rec_bpm(sex, age, height, weight, workout_level, target_pace,stride)
 
-    # rec_bpm(age = '23', height='165',workout_level='5',target_pace='00:00',stride='100')
+    else:
+        rec_bpm(sex = 'f', age='23', height='170', weight='60', workout_level='4', target_pace='07:59',stride='0')
