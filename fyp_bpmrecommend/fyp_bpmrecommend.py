@@ -36,7 +36,7 @@ def getStride(height : int):
     # 평균 보폭
     return round((min_stride + max_stride)/2)
 
-def getTargetPace(sex:str, age:int,workout_level:str,weight:int):
+def getTargetPace(sex:str, age:int,workout_level:str, weight:int):
     '''
     1 : starter
     2 : beginner
@@ -311,7 +311,8 @@ def rec_bpm(sex, age, height, weight,  workout_level, target_pace, stride):
     height = int(height)
     weight = int(weight)
     workout_level=workout_level
-    target_pace = to_sec(target_pace) # 이것도 '00:00' 꼴로 입력 
+    if target_pace == '0' : target_pace = 0
+    else: target_pace = to_sec(target_pace) # 이것도 '00:00' 꼴로 입력 
     stride = int(stride)
 
 
