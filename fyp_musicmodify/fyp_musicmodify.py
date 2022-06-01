@@ -35,7 +35,8 @@ def function(audio_path:str, save_path:str, start_time:str, end_time:str,target_
     print(f'sr : {sr}')
     # 96000 으로 할 때가 가장 정확.
     # prob : 100 이하가 나올 때. 
-    # 
+    # 이거는 100 이하면 두배를 하는 것이 나을 수도...? 아니면 
+    # 아니면 사실 둘 다 맞는 것이므로 주의사항 표시 해주기
     # ex) 현재 only your star 이게 93 나오는데 다른 곳에서는 186으로 나옴
     # 만약 그렇게 되면 사용자가 input 을 120으로 넣게 되면 93으로 인식하면 빠르게 되고,
     # 186으로 인식하게 되면 느리게 될 것임
@@ -65,8 +66,11 @@ def function(audio_path:str, save_path:str, start_time:str, end_time:str,target_
     
     
     # speed
-    rate = round(target_bpm/round(tempo),2) # 늘릴 노래 rate 계산 tempo는 소수점 첫째자리에서 반올림
-    y_fast = librosa.effects.time_stretch(new_y, rate=rate)
+    if target_bpm != 0:
+        rate = round(target_bpm/round(tempo),2) # 늘릴 노래 rate 계산 tempo는 소수점 첫째자리에서 반올림
+        y_fast = librosa.effects.time_stretch(new_y, rate=rate)
+    else: y_fast = new_y
+
     s5 = time.time()
     print(s5-s4)
     # save file
@@ -86,8 +90,10 @@ if __name__ == '__main__':
     입력 형식
     function('The Tempest Night-full-.mp3', 'test5.wav','00:20','01:00','100')
     '''
-    audio_path = sys.argv[1]  # mp3 file 위치, type:str
-    save_path = sys.argv[2]  # modify 한 wav를 저장할 위치, type:str
+    # function('The Tempest Night-full-.mp3', 'test6.wav','00:20','01:00','0')
+
+    audio_path = sys.argv[1]  # mp3 file 위치, type:str, ~~/~~/~~/aa.mp3
+    save_path = sys.argv[2]  # modify 한 wav를 저장할 위치, type:str ,  ~~/~~/~~/bb.wav
     start_time = sys.argv[3] # '00:00' 형태, type:str
     end_time = sys.argv[4] # '00:00' 형태, type:str
     target_bpm = sys.argv[5] # '000' 형태, type:str
