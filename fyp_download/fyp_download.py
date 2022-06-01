@@ -1,5 +1,3 @@
-from cgi import test
-
 import sys
 import time
 from selenium import webdriver
@@ -99,4 +97,3 @@ if __name__ == '__main__':
     print('done')
 
     #download_music_mp3('https://soundcloud.com/ferret-lie/only-your-stars-trickstar-ver',r'C:\Users\yoondain\Desktop\capstone')
-    pass
