@@ -42,18 +42,17 @@ sr ( sampling rate ) 에 따라 소요 시간이 다름. sr에 따라 tempo의 �
 ----
 # 3. fyp_bpmrecommend.py
 ```
-python fyp_bpmrecommend.py '23' '165' '4' '7:30' '100'    
+python fyp_bpmrecommend.py 'm' '23' '165' '50' '4' '07:30' '100'    
 ```
-**python fyp_bpmrecommend.py 나이 키 운동강도 타켓페이스 보폭** 형식으로 입력하면 된다</br>
+**python fyp_bpmrecommend.py 성별 나이 키 몸무게 운동강도 타켓페이스 보폭** 형식으로 입력하면 된다</br>
+![image](https://user-images.githubusercontent.com/76734572/171382990-5061ad6f-f90a-4897-8914-3100d5c19f95.png)</br>
 
-![image](https://user-images.githubusercontent.com/76734572/171343940-a172ebed-e965-4771-96f5-27e9ef64265a.png)</br>
 ## 역할
 1. 사용자의 정보에 맞게 bpm 을 제공한다. 입력한 정보에 맞는 bpm 범위를 return</br>
 ![image](https://user-images.githubusercontent.com/76734572/171344389-cdec34c3-5b67-4dc1-8264-890a136828ff.png)</br>
 2. 추천</br>
-![image](https://user-images.githubusercontent.com/76734572/171344824-1c52c0bb-03fc-4b37-83df-76c9f219fda4.png)</br>
-
-- 페이스 모를 때는 target_pace 를 0으로 입력 -> 운동강도와 나이에 따라 target_pace 제공
+![image](https://user-images.githubusercontent.com/76734572/171383346-f5a4f4d9-0058-4c00-ba0f-48b3c07ababa.png)</br>
+- 페이스 모를 때는 target_pace 를 0으로 입력 -> 성별, 나이, 몸무게, 운동강도에 따라 target_pace 제공
 - 보폭 모를 때는 stride 를 0으로 입력 -> 키에 따라 stirde 제공
 
 
