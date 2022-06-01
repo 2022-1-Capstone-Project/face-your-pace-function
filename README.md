@@ -13,13 +13,11 @@ python fyp_download.py 'https://soundcloud.com/ferret-lie/only-your-stars-tricks
 
 ## 역할
 1. 노래 다운
-2. 노래 제목, 재생 길이, 커버사진을 $ 를 구분자로 return 
+2. 노래 제목, 재생 길이, 커버사진을 '<>' 를 구분자로 return 
 ```
 # fyp_download.py 77번쨰 line 참조
-return (title[6:]+'$'+length[7:-8]+'$'+image_xpath)
+return (title[6:]+'<>'+str(to_sec(length[7:-8]))+'<>'+image_xpath)
 ```
-![image](https://user-images.githubusercontent.com/76734572/170977780-0617683d-31b0-444a-a6ab-fb9b7dd5bc5d.png)</br>
-위처럼 return
 
 ## 코드
 ![image](https://user-images.githubusercontent.com/76734572/170977182-b0fd64d0-38ce-4525-af8f-d99f9c4d0a7a.png)
