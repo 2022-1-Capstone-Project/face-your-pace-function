@@ -83,7 +83,7 @@ def download_mp3(link, download_path):
     '''
 
     # 노래 제목, 재생 길이, 커버사진을 $ 를 구분자로 return
-    # print(title[6:]+'$'+str(to_sec(length[7:-8]))+'$'+image_xpath)
+    print(title[6:]+'<>'+str(to_sec(length[7:-8]))+'<>'+image_xpath)
     return (title[6:]+'<>'+str(to_sec(length[7:-8]))+'<>'+image_xpath)
     
 
@@ -94,6 +94,7 @@ if __name__ == '__main__':
     # print('C:\\Users\\yoondain\\Desktop\\capstone' == r'C:\Users\yoondain\Desktop\capstone')
     # print(link)
     # print(download_path)
-    download_mp3(link,download_path)
+    a = download_mp3(link,download_path)
+    print(a)
 
     # download_mp3('https://soundcloud.com/ferret-lie/only-your-stars-trickstar-ver',r'C:\Users\yoondain\Desktop\capstone')
