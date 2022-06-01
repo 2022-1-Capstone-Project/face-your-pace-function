@@ -56,9 +56,9 @@ def rec_bpm(age, height, workout_level, target_pace, stride):
 
     recommend_bpm = footnum/(target_pace/60)
     bpm1 = int(recommend_bpm)
-    print(bpm1)
+    print(f'rec bpm = {bpm1-5} ~ {bpm1+5}')
     #bpm2 = bpm1
-    return f'rec bpm = {bpm1} ~ {bpm1+5}'
+    return f'rec bpm = {bpm1-5} ~ {bpm1+5}'
 
 
     # 5 단위 굳이...? 
