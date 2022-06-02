@@ -309,10 +309,10 @@ def rec_bpm(sex, age, height, weight,  workout_level, target_pace, stride):
     age = int(age)
     height = int(height)
     weight = int(weight)
-    workout_level=workout_level
+    if workout_level == '0' : workout_level = 1
+    else: workout_level = workout_level
     if target_pace == '0' : target_pace = 0
     else: target_pace = to_sec(target_pace) # 이것도 '00:00' 꼴로 입력 
-    print(target_pace)
     stride = int(stride)
 
     if target_pace != 0 and stride == 0: # 타겟 페이스는 있는데 보폭을 모를 때
@@ -352,4 +352,4 @@ if __name__ == '__main__':
     stride = sys.argv[7] # 보폭  , type:str
     # workout_duration = sys.argv[8]
 
-    rec_bpm(sex, age, height, weight, workout_level, target_pace,stride)
+    rec_bpm(sex, age, height, weight, workout_level, target_pace, stride)
